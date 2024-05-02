@@ -1,0 +1,50 @@
+.container {
+    background: #743115;
+    width: 70%;
+    padding: 5rem 1rem 2rem 1rem;
+    text-align: center;
+}
+
+.container h1 {
+    text-align: center;
+    text-shadow: 0 0 10px rgb(238, 35, 9);
+}
+
+.container hr {
+    width: 60%;
+    margin: 1rem auto 2rem auto;
+    color: whitesmoke;
+}
+
+.container p {
+    margin: 1rem 0;
+}
+
+.container input {
+    width: 60%;
+    padding: 8px 16px;
+    color: #010101;
+    font-size: 1.8rem;
+    border-radius: 0.9rem;
+}
+
+.container button {
+    width: 60%;
+    padding: 6px 12px;
+    margin: 2rem;
+    font-size: 1.8rem;
+    color: #010101;
+    border-radius: 0.9rem;
+}
+
+.container label {
+    font-size: 1.6rem;
+    color: #e0d3d3;
+    display: block;
+    /* border: 1px solid red; */
+    text-align: left;
+    width: 60%;
+    margin: auto;
+    padding-top: 0.1rem;
+    text-shadow: 0 0 3px rgb(163, 66, 10);
+}

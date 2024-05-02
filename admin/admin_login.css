@@ -1,0 +1,118 @@
+.wrapper .student-bodyyy {
+    height: 90rem;
+    width: 100%;
+    /*  */
+    /* background: linear-gradient(rgba(0,0,0, 0.9), rgba(0,0,0, 0.4)), url(./image/daniel-filipe-antunes-santos-B_3gNlkW-W0-unsplash.jpg); */
+    background: linear-gradient(rgba(0,0,0, 0.9), rgba(0,0,0, 0.4));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper .student-bodyyy .box {
+    width: 40rem;
+    height: 70rem;
+    padding: 2.5rem;
+    border: 1px solid #fff;
+    background: #743115;
+    opacity: 0.8;
+    border-radius: 3rem;
+    box-shadow: 0 0 3rem rgba(188, 200, 20, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.box .form-logo img {
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 4rem;
+}
+.wrapper .student-bodyyy .box form {
+    /* border: 1px solid gold; */
+    width: 100%;
+}
+
+.wrapper .student-bodyyy .box .row {
+    width: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.wrapper .student-bodyyy .box label {
+    z-index: 1;
+}
+
+.wrapper .student-bodyyy .box button {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.wrapper .student-bodyyy .box input {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+}
+
+.wrapper .student-bodyyy .box input::placeholder {
+    font-family: "Poppins";
+    font-size: 1.2rem;
+}
+
+.wrapper .student-bodyyy .box label {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    margin-left: -0.5rem;
+}
+
+.icon {
+    position: relative;
+    left: 27rem;
+    top: 6.5rem;
+}
+
+.icon ion-icon {
+    font-size: 1.6rem;
+    color: #180801;
+}
+
+.wrapper .student-bodyyy .box button {
+    margin-top: 4rem;
+    line-height: 4rem;
+    border: none;
+    outline: none;
+    border-radius: 0.6rem;
+    font-size: 1.8rem;
+    background-color: #e5530f;
+    color: #fff;
+}
+
+.wrapper .student-bodyyy .box .register {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#signup {
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    color: whitesmoke;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.reset {
+    color: whitesmoke;
+}
+
+#show_password {
+    background-color: rgb(80, 247, 80);
+}

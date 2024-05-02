@@ -1,0 +1,63 @@
+.wrapper .profile_body {
+    height: 80rem;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0, 0.9), rgba(0,0,0, 0.4));
+    /* background: url(./image/emil-widlund-xrbbXIXAWY0-unsplash.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 1rem;
+}
+
+.profile_box {
+    width: 95%;
+    padding: 1.5rem;
+    border: 1px solid #1b0000;
+    background: #f25a14;
+    opacity: .7;
+    /* text-align: center; */
+    border-radius: 1.5rem;
+    box-shadow: 0 0 3rem rgba(188, 200, 20, 0.5);
+    height: 70rem;
+}
+
+.profile_heading h3 {
+    color: whitesmoke;
+    margin-top: 0;
+}
+
+.profile_heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile_wrapper {
+    width: 70%;
+    margin: 0 auto;
+    background-color: papayawhip;
+    color: #1b0000;
+    padding: 1rem;
+}
+
+.profile_wrapper h3 {
+    margin-top: 0;
+}
+
+.profile_subheading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile_subheading p {
+    color: #f25a14;
+}
+
+.image_container {
+    width: 10%;
+    margin: 1rem auto;
+    text-align: center;
+}
+

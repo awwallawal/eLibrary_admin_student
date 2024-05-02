@@ -1,0 +1,72 @@
+.wrapper .homepage-bodyy {
+    height: 100rem;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0, 0.9), rgba(0,0,0, 0.4));
+    /* background: url(./image/emil-widlund-xrbbXIXAWY0-unsplash.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxx {
+    width: 60%;
+    padding: 2.5rem;
+    border: 1px solid #1b0000;
+    background: #f25a14;
+    opacity: .7;
+    text-align: center;
+    border-radius: 3rem;
+    box-shadow: 0 0 3rem rgba(188, 200, 20, 0.5);
+}
+
+
+.boxx form {
+    background-color: #a098952c;
+    color: #010101;
+    border-radius: 0.9rem;
+}
+
+.boxx input {
+    width: 80%;
+    padding: 8px 16px;
+    color: #010101;
+    font-size: 1.2rem;
+    border-radius: 0.9rem;
+}
+
+.boxx #upload {
+    width: 80%;
+    padding: 8px 0;
+    color: #010101;
+    font-size: 1.2rem;
+    border-radius: 0.9rem;
+    /* border: 1px solid red; */
+    margin: auto;
+}
+
+.boxx button {
+    width: 50%;
+    padding: 6px 12px;
+    margin: 2rem;
+    font-size: 2rem;
+    color: #fff;
+    border-radius: 0.9rem;
+    background-color: rgb(4, 102, 102);
+    outline: none;
+    border: none;
+    text-shadow: 0 0 2px red;
+}
+
+.boxx label {
+    font-size: 1.2rem;
+    color: #010101;
+    display: block;
+    /* border: 1px solid red; */
+    text-align: left;
+    width: 80%;
+    margin: auto;
+    padding-top: 2rem;
+}

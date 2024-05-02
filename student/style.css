@@ -1,0 +1,377 @@
+@font-face {
+    font-family: "Poppins";
+    src: url(./fonts/Poppins-Black.ttf);
+    src: url(./fonts/Poppins-Bold.ttf);
+    src: url(./fonts/Poppins-ExtraBold.ttf);
+    src: url(./fonts/Poppins-ExtraLight.ttf);
+    src: url(./fonts/Poppins-Light.ttf);
+    src: url(./fonts/Poppins-Medium.ttf);
+    src: url(./fonts/Poppins-Regular.ttf);
+    src: url(./fonts/Poppins-SemiBold.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    font-size: 3.2rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+}
+
+h3, p, a {
+    font-size: 1.6rem;
+}
+
+a {
+    text-decoration: none;
+}
+/* ====================================================== */
+/* Main code */
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    color: #fff;
+}
+
+.wrapper header {
+    /* height: 13rem; */
+    width: 100%; 
+    background: #743115;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 8rem;
+}
+
+.wrapper header nav>ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.wrapper .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 
+.wrapper .logo a {
+    margin-bottom: -1.1rem;
+}
+ */
+
+.wrapper .logo p {
+    user-select: none;
+    cursor: none;
+}
+
+.wrapper .logo>a>img {
+    width: 4rem;
+    height: 4rem;
+}
+
+.wrapper header ul {
+    list-style-type: none;
+}
+
+.wrapper header ul>li>a {
+    color: #fff;
+}
+
+.wrapper header ul>li>a:hover{
+    text-decoration: underline;
+    text-underline-offset: 0.9rem;
+    text-decoration-thickness: .2rem;
+}
+
+.wrapper .homepage-body {
+    height: 60rem;
+    width: 100%;
+    /* background: linear-gradient(rgba(0,0,0, 0.9), rgba(0,0,0, 0.4)); */
+    background: url(./image/emil-widlund-xrbbXIXAWY0-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper .homepage-body .box {
+    width: 35rem;
+    padding: 2.5rem;
+    border: 1px solid #fff;
+    background: #743115;
+    opacity: .7;
+    text-align: center;
+    border-radius: 3rem;
+    box-shadow: 0 0 3rem rgba(188, 200, 20, 0.5);
+}
+
+.wrapper .homepage-body .box>p {
+    padding: 2rem;
+    text-shadow: 0,0,0.3rem black;
+}
+
+.wrapper footer {
+    width: 100%;
+    background-color: #180801;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper footer img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.wrapper footer .footer1 {
+    width: 100%;
+    /* background-color: red; */
+    opacity: 0.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.card {
+    flex-basis: 30%;
+    padding: 1rem;
+}
+
+.card p {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+}
+/* 
+.footer1>.card{
+    border: 1px solid red;
+}
+
+.footer1>.card-2 {
+    padding-left: 4rem;
+}
+ */
+.footer1>.card h2 {
+    border-bottom: 1px solid white;
+    border-bottom-width: .3rem;
+}
+
+/* Did this just to push the second card to give a semblance of equal spacing */
+/* 
+.card-2 {
+    margin-left: 10rem;
+}
+ */
+.card-2 ul {
+    list-style: none;
+    padding-top: 2rem;
+    padding-left: 2rem;
+}
+
+.card-2 ul > li {
+    padding-bottom: 2rem ;
+    list-style-type: "📙";
+    padding-inline-start: 1rem;
+}
+
+.card-2 ul > li::marker {
+    font-size: 2rem;
+}
+
+.card-2 ul > li > a {
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+.in-touch {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.in-touch .icons {
+    /* border: 1px solid green; */
+    padding-top: 0.5rem;
+}
+/* 
+.in-touch p {
+    border: 1px solid yellow;
+}
+ */
+.in-touch a {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.4rem;
+}
+
+.icons ion-icon, .footer-icons .f-icons {
+   font-size: 1.5rem;
+}
+
+.location-address span {
+    font-size: 1.4rem;
+    display: block;
+}
+
+.footer-icons {
+    padding-top: 10rem;
+}
+
+.footer-icons a {
+    margin-right: 1rem;
+    color: #fff;
+}
+
+.footer-icons .f-icons {
+    font-size: 3rem;
+ }
+
+.wrapper footer .footer2 {
+    width: 100%;
+    background-color: #785b4e;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.wrapper footer .footer2 a {
+    color: #fff;
+}
+
+.wrapper footer .footer2 a:hover {
+    color: #ccc;
+    text-decoration: underline;
+}
+
+/* ----------------student_Login.html------------------------- */
+
+.wrapper .student-body {
+    height: 160rem;
+    width: 100%;
+    /*  */
+    background: linear-gradient(rgba(0,0,0, 0.9), rgba(0,0,0, 0.4)), url(./image/daniel-filipe-antunes-santos-B_3gNlkW-W0-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper .student-body .box {
+    width: 35rem;
+    height: 50rem;
+    padding: 2.5rem;
+    border: 1px solid #fff;
+    background: #743115;
+    opacity: 0.8;
+    border-radius: 3rem;
+    box-shadow: 0 0 3rem rgba(188, 200, 20, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.box .form-logo img {
+    width: 6rem;
+    height: 6rem;
+}
+.wrapper .student-body .box form {
+    /* border: 1px solid gold; */
+    width: 100%;
+}
+
+.wrapper .student-body .box .row {
+    width: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.wrapper .student-body .box label {
+    z-index: 1;
+}
+
+.wrapper .student-body .box button {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.wrapper .student-body .box input {
+    width: 100%;
+    line-height: 4rem;
+    padding: 0 3rem 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+.wrapper .student-body .box input::placeholder {
+    font-family: "Poppins";
+    font-size: 1.2rem;
+}
+
+.wrapper .student-body .box label {
+    font-size: 1.4rem;
+    padding: 0.5rem;
+    margin-left: -0.5rem;
+}
+
+.icon {
+    position: relative;
+    left: 27rem;
+    top: 6.5rem;
+}
+
+.icon ion-icon {
+    font-size: 1.6rem;
+    color: #180801;
+}
+
+.wrapper .student-body .box button {
+    margin-top: 4rem;
+    line-height: 4rem;
+    border: none;
+    outline: none;
+    border-radius: 0.6rem;
+    font-size: 1.8rem;
+    background-color: #e5530f;
+    color: #fff;
+}
+
+.wrapper .student-body .box .register {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#signup {
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    color: whitesmoke;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.reset {
+    color: whitesmoke;
+}

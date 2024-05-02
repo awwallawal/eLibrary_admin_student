@@ -1,0 +1,82 @@
+.container {
+    background: #743115;
+    width: 40%;
+    padding: 1rem 0.5rem;
+    text-align: center;
+}
+
+.container h1 {
+    text-align: center;
+}
+
+.container hr {
+    width: 40%;
+    margin: 1rem auto 2rem auto;
+    color: whitesmoke;
+}
+
+.feedback_wrapper {
+    
+    background-color: #a098952c;
+    color: #010101;
+    border-radius: 0.9rem;
+}
+
+.feedback_wrapper input {
+    width: 60%;
+    padding: 8px 16px;
+    color: #010101;
+    font-size: 1.8rem;
+    border-radius: 0.9rem;
+}
+
+.feedback_wrapper button {
+    width: 60%;
+    padding: 6px 12px;
+    margin: 2rem;
+    font-size: 1.8rem;
+    color: #010101;
+    border-radius: 0.9rem;
+}
+
+.feedback_wrapper label {
+    font-size: 1.4rem;
+    color: #010101;
+    display: block;
+    /* border: 1px solid red; */
+    text-align: left;
+    width: 60%;
+    margin: auto;
+    padding-top: 3rem;
+}
+
+.feedback_wrapper p {
+    margin-top: 2rem;
+}
+
+.feedback_wrapper textarea {
+    width: 60%;
+    font-size: 1.4rem;
+    border-radius: 0.9rem;
+}
+
+.success {
+    width: 50%;
+    margin: auto;
+    height: 10rem;
+    overflow: auto;
+}
+
+tr {
+    /* background-color: whitesmoke; */
+    color: #1b0000;
+    font-size: 2rem;
+}
+
+.even-row {
+    background-color: #f2f2f2; /* Light gray */
+}
+
+.odd-row {
+    background-color: #a57272; /* White */
+}
