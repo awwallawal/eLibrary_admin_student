@@ -1,5 +1,5 @@
 .wrapper .homepage-bodyy {
-    height: 65rem;
+    height: 90rem;
     width: 100%;
     background: linear-gradient(rgba(0,0,0, 0.9), rgba(0,0,0, 0.4));
     /* background: url(./image/emil-widlund-xrbbXIXAWY0-unsplash.jpg); */
@@ -59,23 +59,33 @@ tr {
     border: none;
 }
 
+.search_bars_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding: 1rem;
+}
+
 .search_form {
     background-color: #cfc6c6;
     width: 100%;
     margin: auto 0 2rem auto;
     padding: 2rem 1rem;
+}
 
+.search_formm {
+    width: 100%;
 }
 
 .search_form form {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-bottom: 2rem;
 }
 
 .search_form input {
-    width: 30%;
+    width: 100%;
     padding: 0.6rem 1rem;
     font-size: 1.2rem;
     font-weight: bolder;
