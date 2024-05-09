@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Issued Books</title>
+    <title>Expired Books List</title>
     <link rel="stylesheet" href="./style.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="./issued_books.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./expired_booklists.css?v=<?php echo time(); ?>">
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -21,12 +21,12 @@
     <div class="wrapper">
         <?php
             include "navbar.php";
-            include "./issued_books_db.php";
+            include "./expired_booklists_db.php";
         ?>
     
         <section class="homepage-bodyy">
             <div class="boxx">
-                <h1>Issued Books</h1>
+                <h1>Expired Books List</h1>
                 <hr>
 
                 <!-- <a href="./book_request_form.php" target="_blank"><button class="add_new">New Book Request</button></a> -->
@@ -80,7 +80,7 @@
 
                                     // $check_database_for_username_requests = mysqli_query($conn, "SELECT student_info.matric_number, book_request_form.username,book_id,book_name,book_authors,issue_date,return_date FROM book_request_form inner join student_info ON book_request_form.username = student_info.user_name WHERE book_request_form.approval_status = 'Not Approved' AND `book_name` LIKE '%$_POST[search]%' ORDER BY `book_name` ASC ");
 
-                                    $check_database_for_username_requests = mysqli_query($conn, "SELECT student_info.matric_number, book_request_form.username,book_id,book_name,book_authors, approval_status, issue_date,return_date FROM book_request_form inner join student_info ON book_request_form.username = student_info.user_name WHERE book_request_form.approval_status = 'Approved' AND `book_name` LIKE '%" . $_POST['search'] . "%' ORDER BY `book_request_form`.`return_date` ASC");
+                                    $check_database_for_username_requests = mysqli_query($conn, "SELECT student_info.matric_number, book_request_form.username,book_id,book_name,book_authors, approval_status, issue_date,return_date,expiry_status FROM book_request_form inner join student_info ON book_request_form.username = student_info.user_name WHERE book_request_form.expiry_status = 'Expired' AND `book_name` LIKE '%" . $_POST['search'] . "%' ORDER BY `book_request_form`.`return_date` ASC");
 
     
     
@@ -99,9 +99,9 @@
                                     echo "<th>";  echo "Book Name"; echo "</th>";
                                     echo "<th>";  echo "Author"; echo "</th>";
                                     echo "<th>";  echo "Approval Status"; echo "</th>";
-                                    echo "<th>";  echo "Expiry Status"; echo "</th>";
                                     echo "<th>";  echo "Issue Date"; echo "</th>";
                                     echo "<th>";  echo "Return Date"; echo "</th>";
+                                    echo "<th>";  echo "Expiry Status"; echo "</th>";
                                     echo "</tr>";
     
                                     $count=0;
@@ -119,6 +119,9 @@
                                         echo "<td>"; echo $row['book_name']; echo "</td>";
                                         echo "<td>"; echo $row['book_authors']; echo "</td>";
                                         echo "<td>"; echo $row['approval_status']; echo "</td>";
+                                        echo "<td>"; echo $row['issue_date']; echo "</td>";
+                                        echo "<td>"; echo $row['return_date']; echo "</td>";
+                                        echo "<td>"; echo $row['expiry_status']; echo "</td>";                                
                                         // echo "<td style='width: 5%;'>";
                                         // echo "<form method='post' action='' style='width: 100%;'>";
                                         // echo "<input type='hidden' name='book_name' value='" . $row['book_name'] . "' style='width: 100%;'>";
@@ -126,17 +129,15 @@
                                         // echo "<button type='submit' name='revoke' style='width: 100%; background-color: yellow; font-size: 1rem;'>Revoke</button>";
                                         // echo "</form>";
                                         // echo "</td>";
-                                        echo "<td style='width: 5%;'>";
-                                        echo "<div style='width: 100%;'>";
-                                                if($todaysDate > $returnDate) {
-                                                    echo "<p style='color:red'>Expired</p>";
-                                                } else {
-                                                    echo "<p style='color:green'>Borrowed</p>";
-                                                }
-                                        echo "</div>";
-                                        echo "</td>";
-                                        echo "<td>"; echo $row['issue_date']; echo "</td>";
-                                        echo "<td>"; echo $row['return_date']; echo "</td>";                                
+                                        // echo "<td style='width: 5%;'>";
+                                        // echo "<div style='width: 100%;'>";
+                                        //         if($todaysDate > $returnDate) {
+                                            //             echo "<p style='color:red'>Expired</p>";
+                                            //         } else {
+                                                //             echo "<p style='color:green'>Borrowed</p>";
+                                                //         }
+                                                // echo "</div>";
+                                                // echo "</td>";                                      
                                         echo "</tr>";
                                     }
     
@@ -145,7 +146,7 @@
                                     }
                                 } elseif (isset($_POST['username_search'])) {
 
-                                    $check_database_for_username_requests = mysqli_query($conn, "SELECT student_info.matric_number, book_request_form.username,book_id,book_name,book_authors, approval_status, issue_date,return_date FROM book_request_form inner join student_info ON book_request_form.username = student_info.user_name WHERE book_request_form.approval_status = 'Approved' AND `username` LIKE '%" . $_POST['usernamesearch'] . "%' ORDER BY `book_request_form`.`return_date` ASC");
+                                    $check_database_for_username_requests = mysqli_query($conn, "SELECT student_info.matric_number, book_request_form.username,book_id,book_name,book_authors, approval_status, issue_date,return_date,expiry_status FROM book_request_form inner join student_info ON book_request_form.username = student_info.user_name WHERE book_request_form.expiry_status = 'Expired' AND `username` LIKE '%" . $_POST['usernamesearch'] . "%' ORDER BY `book_request_form`.`return_date` ASC");
 
     
     
@@ -164,9 +165,9 @@
                                     echo "<th>";  echo "Book Name"; echo "</th>";
                                     echo "<th>";  echo "Author"; echo "</th>";
                                     echo "<th>";  echo "Approval Status"; echo "</th>";
-                                    echo "<th>";  echo "Expiry Status"; echo "</th>";
                                     echo "<th>";  echo "Issue Date"; echo "</th>";
                                     echo "<th>";  echo "Return Date"; echo "</th>";
+                                    echo "<th>";  echo "Expiry Status"; echo "</th>";
                                     echo "</tr>";
     
                                     $count=0;
@@ -184,6 +185,9 @@
                                         echo "<td>"; echo $row['book_name']; echo "</td>";
                                         echo "<td>"; echo $row['book_authors']; echo "</td>";
                                         echo "<td>"; echo $row['approval_status']; echo "</td>";
+                                        echo "<td>"; echo $row['issue_date']; echo "</td>";
+                                        echo "<td>"; echo $row['return_date']; echo "</td>";
+                                        echo "<td>"; echo $row['expiry_status']; echo "</td>";                                
                                         // echo "<td style='width: 5%;'>";
                                         // echo "<form method='post' action='' style='width: 100%;'>";
                                         // echo "<input type='hidden' name='book_name' value='" . $row['book_name'] . "' style='width: 100%;'>";
@@ -191,17 +195,15 @@
                                         // echo "<button type='submit' name='revoke' style='width: 100%; background-color: yellow; font-size: 1rem;'>Revoke</button>";
                                         // echo "</form>";
                                         // echo "</td>";
-                                        echo "<td style='width: 5%;'>";
-                                        echo "<div style='width: 100%;'>";
-                                                if($todaysDate > $returnDate) {
-                                                    echo "<p style='color:red'>Expired</p>";
-                                                } else {
-                                                    echo "<p style='color:green'>Borrowed</p>";
-                                                }
-                                        echo "</div>";
-                                        echo "</td>";
-                                        echo "<td>"; echo $row['issue_date']; echo "</td>";
-                                        echo "<td>"; echo $row['return_date']; echo "</td>";                                
+                                        // echo "<td style='width: 5%;'>";
+                                        // echo "<div style='width: 100%;'>";
+                                        //         if($todaysDate > $returnDate) {
+                                            //             echo "<p style='color:red'>Expired</p>";
+                                            //         } else {
+                                                //             echo "<p style='color:green'>Borrowed</p>";
+                                                //         }
+                                                // echo "</div>";
+                                                // echo "</td>";                                      
                                         echo "</tr>";
                                     }
     
@@ -210,7 +212,7 @@
                                     }
                                 } elseif (isset($_POST['matric_search'])) {
 
-                                    $check_database_for_username_requests = mysqli_query($conn, "SELECT student_info.matric_number, book_request_form.username,book_id,book_name,book_authors, approval_status, issue_date,return_date FROM book_request_form inner join student_info ON book_request_form.username = student_info.user_name WHERE book_request_form.approval_status = 'Approved' AND `matric_number` LIKE '%" . $_POST['matricsearch'] . "%' ORDER BY `book_request_form`.`return_date` ASC");
+                                    $check_database_for_username_requests = mysqli_query($conn, "SELECT student_info.matric_number, book_request_form.username,book_id,book_name,book_authors, approval_status, issue_date,return_date,expiry_status FROM book_request_form inner join student_info ON book_request_form.username = student_info.user_name WHERE book_request_form.expiry_status = 'Expired' AND `matric_number` LIKE '%" . $_POST['matricsearch'] . "%' ORDER BY `book_request_form`.`return_date` ASC");
 
     
     
@@ -229,9 +231,9 @@
                                     echo "<th>";  echo "Book Name"; echo "</th>";
                                     echo "<th>";  echo "Author"; echo "</th>";
                                     echo "<th>";  echo "Approval Status"; echo "</th>";
-                                    echo "<th>";  echo "Expiry Status"; echo "</th>";
                                     echo "<th>";  echo "Issue Date"; echo "</th>";
                                     echo "<th>";  echo "Return Date"; echo "</th>";
+                                    echo "<th>";  echo "Expiry Status"; echo "</th>";
                                     echo "</tr>";
     
                                     $count=0;
@@ -249,6 +251,9 @@
                                         echo "<td>"; echo $row['book_name']; echo "</td>";
                                         echo "<td>"; echo $row['book_authors']; echo "</td>";
                                         echo "<td>"; echo $row['approval_status']; echo "</td>";
+                                        echo "<td>"; echo $row['issue_date']; echo "</td>";
+                                        echo "<td>"; echo $row['return_date']; echo "</td>";
+                                        echo "<td>"; echo $row['expiry_status']; echo "</td>";                                
                                         // echo "<td style='width: 5%;'>";
                                         // echo "<form method='post' action='' style='width: 100%;'>";
                                         // echo "<input type='hidden' name='book_name' value='" . $row['book_name'] . "' style='width: 100%;'>";
@@ -256,17 +261,15 @@
                                         // echo "<button type='submit' name='revoke' style='width: 100%; background-color: yellow; font-size: 1rem;'>Revoke</button>";
                                         // echo "</form>";
                                         // echo "</td>";
-                                        echo "<td style='width: 5%;'>";
-                                        echo "<div style='width: 100%;'>";
-                                                if($todaysDate > $returnDate) {
-                                                    echo "<p style='color:red'>Expired</p>";
-                                                } else {
-                                                    echo "<p style='color:green'>Borrowed</p>";
-                                                }
-                                        echo "</div>";
-                                        echo "</td>";
-                                        echo "<td>"; echo $row['issue_date']; echo "</td>";
-                                        echo "<td>"; echo $row['return_date']; echo "</td>";                                
+                                        // echo "<td style='width: 5%;'>";
+                                        // echo "<div style='width: 100%;'>";
+                                        //         if($todaysDate > $returnDate) {
+                                            //             echo "<p style='color:red'>Expired</p>";
+                                            //         } else {
+                                                //             echo "<p style='color:green'>Borrowed</p>";
+                                                //         }
+                                                // echo "</div>";
+                                                // echo "</td>";                                      
                                         echo "</tr>";
                                     }
     
@@ -282,7 +285,7 @@
                                     // $check_database_for_username_requests = mysqli_query($conn, "SELECT * FROM `book_request_form` WHERE approval_status = 'Not Approved' ORDER BY `book_request_form`.`book_name` ASC");
 
                                     
-                                    $check_database_for_username_requests = mysqli_query($conn, "SELECT student_info.matric_number, book_request_form.username,book_id,book_name,book_authors, approval_status, issue_date,return_date FROM book_request_form inner join student_info ON book_request_form.username = student_info.user_name WHERE book_request_form.approval_status = 'Approved' ORDER BY `book_request_form`.`return_date` ASC; ");
+                                    $check_database_for_username_requests = mysqli_query($conn, "SELECT student_info.matric_number, book_request_form.username,book_id,book_name,book_authors, approval_status, issue_date,return_date,expiry_status FROM book_request_form inner join student_info ON book_request_form.username = student_info.user_name WHERE book_request_form.expiry_status = 'Expired' ORDER BY `book_request_form`.`return_date` ASC; ");
 
                                     
                                     
@@ -294,10 +297,9 @@
                                     echo "<th>";  echo "Book Name"; echo "</th>";
                                     echo "<th>";  echo "Author"; echo "</th>";
                                     echo "<th>";  echo "Approval Status"; echo "</th>";
-                                    echo "<th>";  echo "Returned"; echo "</th>";
-                                    echo "<th>";  echo "Expiry Status Book"; echo "</th>";
                                     echo "<th>";  echo "Issue Date"; echo "</th>";
                                     echo "<th>";  echo "Return Date"; echo "</th>";
+                                    echo "<th>";  echo "Expiry Status"; echo "</th>";
                                     echo "</tr>";
                                     
                                     $count=0;
@@ -305,7 +307,6 @@
                                     while($row = mysqli_fetch_assoc($check_database_for_username_requests)) {
                                         $todaysDate = date('d-m-Y');
                                         $returnDate = $row['return_date'];
-                                        $book_name = $row['book_name'];
                                         $count++;
                                         // Use modulus operator to alternate row colors
                                         $row_class = $count % 2 == 0 ? "even-row" : "odd-row";
@@ -316,28 +317,25 @@
                                         echo "<td>"; echo $row['book_name']; echo "</td>";
                                         echo "<td>"; echo $row['book_authors']; echo "</td>";
                                         echo "<td>"; echo $row['approval_status']; echo "</td>";
-                                        echo "<td style='width: 5%;'>";
-                                        echo "<form method='post' action='' style='width: 100%;'>";
-                                        echo "<input type='hidden' name='book_name' value='" . $row['book_name'] . "' style='width: 100%;'>";
-                                        echo "<input type='hidden' name='username' value='" . $row['username'] . "' style='width: 100%;'>";
-                                        echo "<button type='submit' name='returned' style='width: 100%; background-color: yellow; font-size: 1rem;'>Returned</button>";
-                                        echo "</form>";
-                                        echo "</td>";
-                                        echo "<td style='width: 5%;'>";
-                                        echo "<div style='width: 100%;'>";
-                                        if ($todaysDate > $returnDate) {
-                                            echo "<p style='color:red'>Expired</p>";
-                                            // Assuming `$book_id` holds the ID of the book
-                                            mysqli_query($conn, "UPDATE `book_request_form` SET `expiry_status`='Expired' WHERE `book_name` = '$book_name' AND `return_date` = '$returnDate'");
-                                        } else {
-                                            echo "<p style='color:green; '> Unreturned </p>";
-                                            mysqli_query($conn, "UPDATE `book_request_form` SET `expiry_status`='' WHERE `book_name` = '$book_name' AND `return_date` = '$returnDate'");
-                                        }
-                                        echo "</div>";
-                                        echo "</td>";
-                                      
                                         echo "<td>"; echo $row['issue_date']; echo "</td>";
-                                        echo "<td>"; echo $row['return_date']; echo "</td>";                                
+                                        echo "<td>"; echo $row['return_date']; echo "</td>";
+                                        echo "<td>"; echo $row['expiry_status']; echo "</td>";                                
+                                        // echo "<td style='width: 5%;'>";
+                                        // echo "<form method='post' action='' style='width: 100%;'>";
+                                        // echo "<input type='hidden' name='book_name' value='" . $row['book_name'] . "' style='width: 100%;'>";
+                                        // echo "<input type='hidden' name='username' value='" . $row['username'] . "' style='width: 100%;'>";
+                                        // echo "<button type='submit' name='revoke' style='width: 100%; background-color: yellow; font-size: 1rem;'>Revoke</button>";
+                                        // echo "</form>";
+                                        // echo "</td>";
+                                        // echo "<td style='width: 5%;'>";
+                                        // echo "<div style='width: 100%;'>";
+                                        //         if($todaysDate > $returnDate) {
+                                            //             echo "<p style='color:red'>Expired</p>";
+                                            //         } else {
+                                                //             echo "<p style='color:green'>Borrowed</p>";
+                                                //         }
+                                                // echo "</div>";
+                                                // echo "</td>";                                      
                                         echo "</tr>";
                                     }
     
@@ -353,8 +351,7 @@
                     
                 </div>
                 
-                <a href="./expired_booklists.php" ><button style="padding: 0.6rem 1.2rem;">Expired Book Requests</button></a>
-  
+                
             </div>
                                 
         </section>

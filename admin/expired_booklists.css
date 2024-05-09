@@ -1,0 +1,119 @@
+.wrapper .homepage-bodyy {
+    height: 90rem;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0, 0.9), rgba(0,0,0, 0.4));
+    /* background: url(./image/emil-widlund-xrbbXIXAWY0-unsplash.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxx {
+    width: 80%;
+    padding: 2.5rem;
+    border: 1px solid #1b0000;
+    background: #f25a14;
+    opacity: .7;
+    text-align: center;
+    border-radius: 3rem;
+    box-shadow: 0 0 3rem rgba(188, 200, 20, 0.5);
+}
+
+.table_container {
+    height: 30rem; /* Set the desired height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    /* background-color: #db1919; */
+    scrollbar-color: #ee0808;
+}
+
+tr {
+    /* background-color: whitesmoke; */
+    color: #1b0000;
+    font-size: 1.8rem;
+}
+
+.download {
+    color: #1b0000;
+    font-size: 1.3rem;
+    text-decoration: underline;
+}
+
+.even-row {
+    background-color: #f2f2f2; /* Light gray */
+}
+
+.odd-row {
+    background-color: #a57272; /* White */
+}
+
+.boxx h1 {
+    color: #1b0000;
+}
+
+.boxx hr {
+    height: 3px; /* Adjust the thickness */
+    background-color: #333; /*Change the color as needed*/
+    border: none;
+}
+
+.search_bars_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding: 1rem;
+}
+
+.search_form {
+    background-color: #cfc6c6;
+    width: 100%;
+    margin: auto 0 2rem auto;
+    padding: 2rem 1rem;
+}
+
+.search_formm {
+    width: 100%;
+}
+
+.search_form form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.search_form input {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin-bottom: 0;
+    color: #fff;
+    background-color: rgb(0, 0, 0);
+    border: none;
+    outline: none;
+}
+
+.search_form button {
+    padding: 0.6rem 1.2rem;
+    /* font-size: 1.2rem; */
+    height: 100%;
+    margin-bottom: 0;
+    border: none;
+    outline: none;
+    /* text-align: center; */
+}
+
+.search_form button ion-icon {
+    font-size: 1.6rem;
+    color: #1b0000;
+}
+
+.add_new {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    outline: none;
+    border-radius: 0.9rem;
+}
